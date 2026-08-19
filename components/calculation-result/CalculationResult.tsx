@@ -1,7 +1,8 @@
 "use client";
 
-import SavedCalculationItem from "@/components/saved-calculations-list/SavedCalculationItem";
-import { useLeaseCalculator } from "@/components/form/LeaseCalculatorContext";
+import { useLeaseCalculator } from "@/Applications/form/LeaseCalculatorContext";
+
+import SavedCalculationItem from "../saved-calculation-item/SavedCalculationItem";
 
 const CalculationResult = () => {
   const { calculationEntry } = useLeaseCalculator();

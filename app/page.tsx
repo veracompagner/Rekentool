@@ -1,7 +1,7 @@
-import Form from "@/components/form/Form";
 import { Container } from "@/app/styles/page.styled";
-import { LeaseCalculatorProvider } from "@/components/form/LeaseCalculatorContext";
-import SavedCalculationsList from "@/components/saved-calculations-list/SavedCalculationsList";
+import Form from "@/Applications/form/Form";
+import { LeaseCalculatorProvider } from "@/Applications/form/LeaseCalculatorContext";
+import SavedCalculationsList from "@/Applications/saved-calculations-list/SavedCalculationsList";
 
 const Home = () => {
   return (

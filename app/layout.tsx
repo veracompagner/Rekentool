@@ -1,8 +1,11 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import { gotham } from "./fonts/gotham";
+
 import StyledComponentsRegistry from "@/lib/registry";
-import "./globals.css";
+
+import { gotham } from "./fonts/gotham";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",

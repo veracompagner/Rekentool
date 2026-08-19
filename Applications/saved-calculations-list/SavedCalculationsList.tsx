@@ -1,11 +1,12 @@
 "use client";
 
-import SavedCalculationItem from "@/components/saved-calculations-list/SavedCalculationItem";
 import {
   SavedCalculationsListTitle,
   SavedCalculationsListWrapper,
-} from "@/components/saved-calculations-list/styles/saved-calculations-list.styled";
-import { useLeaseCalculator } from "@/components/form/LeaseCalculatorContext";
+} from "@/Applications/saved-calculations-list/styles/saved-calculations-list.styled";
+import SavedCalculationItem from "@/components/saved-calculation-item/SavedCalculationItem";
+
+import { useLeaseCalculator } from "../form/LeaseCalculatorContext";
 
 const SavedCalculationsList = () => {
   const { savedCalculations, calculationError } = useLeaseCalculator();

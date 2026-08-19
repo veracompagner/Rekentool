@@ -1,8 +1,8 @@
 "use client";
 
+import { useLeaseCalculator } from "@/Applications/form/LeaseCalculatorContext";
+import { FormInputWrapper } from "@/components/form-fields/styles/form-fields.styled";
 import FormFieldInput from "@/components/form-input-field/FormFieldInput";
-import { FormInputWrapper } from "@/components/form/styles/form.styled";
-import { useLeaseCalculator } from "@/components/form/LeaseCalculatorContext";
 import { formatCurrency } from "@/lib/formatCurrency";
 
 const FormFields = () => {

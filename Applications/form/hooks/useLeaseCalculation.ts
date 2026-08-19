@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { fetchLeaseCalculation, type LeaseCalculation } from "@/lib/graphql";
 
 type UseLeaseCalculationInput = {

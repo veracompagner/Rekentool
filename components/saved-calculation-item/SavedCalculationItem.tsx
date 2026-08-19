@@ -5,9 +5,9 @@ import {
   SavedCalculationsName,
   SavedCalculationsSubItemName,
   SavedCalculationWrapper,
-} from "@/components/saved-calculations-list/styles/saved-calculations-list.styled";
+} from "@/components/saved-calculation-item/styles/saved-calculations-item.styled";
 import { formatCurrency } from "@/lib/formatCurrency";
-import type { SavedCalculation } from "@/lib/savedCalculations";
+import { SavedCalculation } from "@/lib/savedCalculations";
 
 const SavedCalculationItem = ({ saved }: { saved: SavedCalculation }) => {
   const subItems = [

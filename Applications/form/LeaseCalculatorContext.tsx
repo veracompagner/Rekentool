@@ -1,13 +1,14 @@
 "use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react";
-import { useBoundaries } from "@/components/form/hooks/useBoundaries";
-import { useLeaseCalculation } from "@/components/form/hooks/useLeaseCalculation";
-import { useSavedCalculations } from "@/components/form/hooks/useSavedCalculations";
+import { createContext, type ReactNode, useContext, useState } from "react";
+
+import { useBoundaries } from "@/Applications/form/hooks/useBoundaries";
+import { useLeaseCalculation } from "@/Applications/form/hooks/useLeaseCalculation";
+import { useSavedCalculations } from "@/Applications/form/hooks/useSavedCalculations";
 import { formatCurrency } from "@/lib/formatCurrency";
-import { validateBoundary } from "@/lib/validateBoundary";
-import type { LeaseBoundaries } from "@/lib/graphql";
+import { LeaseBoundaries } from "@/lib/graphql";
 import type { SavedCalculation } from "@/lib/savedCalculations";
+import { validateBoundary } from "@/lib/validateBoundary";
 
 type LeaseCalculatorContextValue = {
   boundaries: LeaseBoundaries | null;

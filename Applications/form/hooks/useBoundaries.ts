@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchBoundaries, type LeaseBoundaries } from "@/lib/graphql";
+
+import { fetchBoundaries, LeaseBoundaries } from "@/lib/graphql";
 
 export const useBoundaries = () => {
   const [boundaries, setBoundaries] = useState<LeaseBoundaries | null>(null);

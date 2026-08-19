@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { baseText } from "@/components/styles/typography.styled";
+
+import { baseText } from "@/app/styles/typography.styled";
 
 export const FieldWrapper = styled.div`
   display: flex;
