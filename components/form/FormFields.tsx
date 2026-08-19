@@ -22,12 +22,23 @@ const FormFields = () => {
 
   return (
     <FormInputWrapper>
-      <FormFieldInput title="Merk" value={brand} onChange={setBrand} />
-      <FormFieldInput title="Type" value={type} onChange={setType} />
+      <FormFieldInput
+        title="Merk"
+        value={brand}
+        placeholder="Bijvoorbeeld DAF"
+        onChange={setBrand}
+      />
+      <FormFieldInput
+        title="Type"
+        value={type}
+        placeholder="Bijvoorbeeld XF480"
+        onChange={setType}
+      />
       <FormFieldInput
         title="Bouwjaar"
         type="number"
         value={year}
+        placeholder="Bijvoorbeeld 2021"
         onChange={setYear}
         error={yearError}
         subTitleText={
@@ -40,6 +51,7 @@ const FormFields = () => {
         title="Aanschafwaarde"
         type="number"
         value={purchasePrice}
+        placeholder={`Bijvoorbeeld ${formatCurrency(50000)}`}
         onChange={setPurchasePrice}
         error={purchasePriceError}
         subTitleText={

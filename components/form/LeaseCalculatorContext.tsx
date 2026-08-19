@@ -6,7 +6,7 @@ import { useLeaseCalculation } from "@/components/form/hooks/useLeaseCalculation
 import { useSavedCalculations } from "@/components/form/hooks/useSavedCalculations";
 import { formatCurrency } from "@/lib/formatCurrency";
 import { validateBoundary } from "@/lib/validateBoundary";
-import type { LeaseBoundaries, LeaseCalculation } from "@/lib/graphql";
+import type { LeaseBoundaries } from "@/lib/graphql";
 import type { SavedCalculation } from "@/lib/savedCalculations";
 
 type LeaseCalculatorContextValue = {
@@ -22,7 +22,7 @@ type LeaseCalculatorContextValue = {
   yearError?: string;
   purchasePriceError?: string;
   isFormValid: boolean;
-  calculation: LeaseCalculation | null;
+  calculationEntry: SavedCalculation | null;
   calculationError: string | null;
   savedCalculations: SavedCalculation[];
   handleSave: () => void;
@@ -58,7 +58,7 @@ export const LeaseCalculatorProvider = ({
     !yearError &&
     !purchasePriceError;
 
-  const { calculation, error: calculationError } = useLeaseCalculation({
+  const { calculation, error: calculationFetchError } = useLeaseCalculation({
     isFormValid,
     brand,
     type,
@@ -68,17 +68,20 @@ export const LeaseCalculatorProvider = ({
 
   const { savedCalculations, save } = useSavedCalculations();
 
-  const handleSave = () => {
-    if (!calculation) return;
+  const calculationEntry: SavedCalculation | null = calculation
+    ? {
+        id: "preview",
+        brand,
+        type,
+        year: Number(year),
+        purchasePrice: Number(purchasePrice),
+        calculation,
+      }
+    : null;
 
-    save({
-      id: crypto.randomUUID(),
-      brand,
-      type,
-      year: Number(year),
-      purchasePrice: Number(purchasePrice),
-      calculation,
-    });
+  const handleSave = () => {
+    if (!calculationEntry) return;
+    save({ ...calculationEntry, id: crypto.randomUUID() });
   };
 
   return (
@@ -96,8 +99,8 @@ export const LeaseCalculatorProvider = ({
         yearError,
         purchasePriceError,
         isFormValid,
-        calculation,
-        calculationError: boundariesError ?? calculationError,
+        calculationEntry,
+        calculationError: boundariesError ?? calculationFetchError,
         savedCalculations,
         handleSave,
       }}

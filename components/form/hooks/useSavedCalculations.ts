@@ -13,11 +13,11 @@ export const useSavedCalculations = () => {
   >([]);
 
   useEffect(() => {
-    queueMicrotask(() => setSavedCalculations(loadSavedCalculations()));
+    Promise.resolve().then(() => setSavedCalculations(loadSavedCalculations()));
   }, []);
 
   const save = (entry: SavedCalculation) => {
-    const updated = [...savedCalculations, entry];
+    const updated = [entry, ...savedCalculations];
     setSavedCalculations(updated);
     persistSavedCalculations(updated);
   };

@@ -12,6 +12,7 @@ const FormFieldInput = ({
   onChange,
   type = "text",
   error,
+  placeholder,
 }: {
   title: string;
   subTitleText?: string;
@@ -19,6 +20,7 @@ const FormFieldInput = ({
   onChange: (value: string) => void;
   type?: "text" | "number";
   error?: string;
+  placeholder?: string;
 }) => {
   return (
     <FieldWrapper>
@@ -27,6 +29,7 @@ const FormFieldInput = ({
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || ""}
       />
       <SubtitleText $error={Boolean(error)}>
         {error ?? subTitleText}

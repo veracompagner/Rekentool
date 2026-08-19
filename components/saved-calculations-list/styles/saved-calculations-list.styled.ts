@@ -46,6 +46,7 @@ export const SavedCalculationPrice = styled.p`
 
 export const SavedCalculationPriceWrapper = styled.div`
   display: flex;
+  align-content: center;
 `;
 
 export const SavedCalculationsSubItemName = styled.p`
