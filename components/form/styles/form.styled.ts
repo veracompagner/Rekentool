@@ -2,9 +2,14 @@ import styled from "styled-components";
 
 export const FormInputWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 24px;
+  gap: 16px;
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+  }
 `;
 
 export const PrimaryButton = styled.button`
@@ -24,5 +29,9 @@ export const PrimaryButton = styled.button`
 export const FormWrapper = styled.div`
   padding: 40px;
   background-color: white;
-  border-radius: 6px 0 0 6px;
+  border-radius: 6px 6px 0 0;
+
+  @media (min-width: 600px) {
+    border-radius: 6px 0 0 6px;
+  }
 `;

@@ -17,7 +17,7 @@ export const SubtitleText = styled.p<{ $error?: boolean }>(
 );
 
 export const Input = styled.input`
-  width: 275px;
+  max-width: 275px;
   background-color: #f6f6f6;
   padding: 12px;
   border-radius: 5px;
